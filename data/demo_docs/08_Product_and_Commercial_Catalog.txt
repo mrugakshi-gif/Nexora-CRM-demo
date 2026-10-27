@@ -1,0 +1,38 @@
+B2B Product and Commercial Catalog
+
+Compact product/pricing retrieval source
+
+Document ID: CRM-08
+Prepared: 20 September 2026
+Approx. 3 pages
+
+B2B Product and Commercial Catalog
+
+This short plain-text catalog is intentionally compact and easy to retrieve. All products, features and prices are synthetic. Prices are illustrative annual list prices in INR and are not actual vendor prices.
+
+PulseCRM Enterprise | CRM platform | List price: ₹1.8 lakh / user / year | Use: Core CRM, pipeline, account management
+InsightIQ | B2B intelligence and analytics | List price: ₹28 lakh / year | Use: Firmographics, enrichment, risk signals, dashboards
+OmniDesk | Customer service workspace | List price: ₹95,000 / agent / year | Use: Ticketing, knowledge, SLA tracking
+SecureSync | Secure integration layer | List price: ₹22 lakh / year | Use: API gateway, data sync, audit logs
+RouteVision | Field and logistics intelligence | List price: ₹16 lakh / year | Use: Territory and route analytics
+DataBridge | Data quality and entity resolution | List price: ₹14 lakh / year | Use: Deduplication, normalization, record linkage
+
+Bundling rules
+
+PulseCRM Enterprise + InsightIQ: common combination when an account needs both pipeline management and external business intelligence.
+
+OmniDesk + RouteVision: suitable for service-heavy field operations.
+
+SecureSync + DataBridge: suitable when secure integration and data quality are both explicit requirements.
+
+InsightIQ can be paired with any core CRM deployment when account intelligence is required.
+
+Commercial test cases
+
+Which product should be considered for a company that needs API security and audit logs?
+
+What is the list price of OmniDesk for 120 agents?
+
+What combination best fits a field-services organization with data-quality problems?
+
+Which products could be proposed to NimbusWorks for an analytics expansion?

@@ -1,0 +1,69 @@
+B2B Contact and Stakeholder Intelligence
+
+Plain-text stakeholder graph for entity extraction
+
+Document ID: CRM-04
+Prepared: 20 September 2026
+Approx. 3 pages
+
+B2B Contact and Stakeholder Intelligence
+
+This text-only file provides relationship-level information for the shared synthetic account universe. It is intentionally compact so it can test retrieval from short documents and entity extraction from plain text.
+
+ApexGrid Manufacturing:
+- CFO: Nikhil Bapat. Primary commercial sponsor. Concern: total cost and rollout timing.
+- VP Revenue Operations: Kavya Shah. Operational sponsor. Concern: pipeline visibility and duplicate data.
+- CIO: Sameer Joshi. Technical gatekeeper. Concern: integration and security.
+- Head of Customer Service: Reema Patil. User champion. Concern: fragmented case handling.
+
+Northstar Logistics Group:
+- COO: Mahesh Menon. Executive sponsor. Concern: service consistency.
+- Head of Customer Experience: Farah Khan. Champion. Concern: SLA tracking and customer visibility.
+- CIO: Vivek Nair. Technical approver. Concern: data synchronization.
+- Procurement Lead: Tanya Rao. Commercial gatekeeper. Concern: contract terms and implementation scope.
+
+BlueOrbit Retail Systems:
+- VP Sales: Ananya Desai. Sponsor. Concern: pipeline predictability.
+- CFO: Ritesh Kulkarni. Budget approver. Concern: renewal economics.
+- Head of Support: Manish Roy. Champion. Concern: backlog and recurring escalations.
+- CTO: Priyam Shah. Technical reviewer. Concern: API coverage.
+
+VertexPay Systems:
+- CISO: Devika Menon. Security authority. Concern: audit logs and access controls.
+- Platform Director: Rohit Sethi. Technical champion. Concern: integration reliability.
+- CFO: Aakash Verma. Commercial approver. Concern: operating cost.
+- Procurement Manager: Sana Thomas. Contract owner. Concern: liability and renewal language.
+
+HelioBio Labs:
+- Commercial Director: Meera Iyer. Sponsor. Concern: account growth.
+- Research Operations Lead: Harsh Vora. User champion. Concern: access to information.
+- IT Manager: Sneha Nair. Technical reviewer. Concern: identity and data handling.
+
+Crestline Energy Services:
+- CIO: Aditya Menon. Sponsor. Concern: fragmented operational data.
+- COO: Kavita Rao. User sponsor. Concern: field-service performance.
+- Finance Controller: Sameer Bhat. Budget approver. Concern: measurable ROI.
+- Procurement Lead: Rupa Shah. Commercial gatekeeper. Concern: rollout obligations.
+
+Rivermark Foods Distribution:
+- Sales Director: Pranav Kulkarni. Sponsor. Concern: stagnant growth.
+- Finance Manager: Jyoti More. Approver. Concern: overdue payments and margin.
+- Operations Manager: Tejas Patil. User. Concern: order visibility.
+
+Suggested extraction tasks
+
+Extract person names, titles, companies, concerns and stakeholder roles.
+
+Determine which contacts are sponsors, champions, approvers or technical gatekeepers.
+
+Link each person to the correct account without confusing similarly named people.
+
+Answer which account has a CISO involved and why that matters.
+
+Sources and notes
+
+This document is original synthetic content for CRM/RAG testing. External sources are listed for research context; the fictional company records, values, conversations, and predictions are intentionally fabricated.
+
+SalesforceB2BCRM: https://www.salesforce.com/in/crm/b2b-crm/
+
+CRMArenaPro: https://huggingface.co/datasets/Salesforce/CRMArenaPro

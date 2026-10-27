@@ -11,7 +11,10 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 import PyPDF2
 import docx
 
-DB_DIR = os.path.join(BASE_DIR, "chroma_db")
+CHROMA_DIR_NAME = os.environ.get("CHROMA_DB_DIR", "demo_chroma_db")
+DB_DIR = os.path.join(BASE_DIR, CHROMA_DIR_NAME)
+if not os.path.exists(DB_DIR) and os.path.exists(os.path.join(BASE_DIR, "chroma_db")):
+    DB_DIR = os.path.join(BASE_DIR, "chroma_db")
 
 def check_embeddings_health() -> dict:
     """Check health of Google Embeddings."""

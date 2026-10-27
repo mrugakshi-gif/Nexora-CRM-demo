@@ -1,0 +1,19 @@
+Indian B2B CRM - Product Catalog
+================================
+
+## CORE CRM MODULE
+
+SKU: CRM-CORE-01. Features lead management, opportunity tracking, and contact management. Starts at ₹10,000/user/year.
+
+## MARKETING AUTOMATION ADD-ON
+
+SKU: MKT-AUTO-02. Features email campaigns, lead scoring, and social media integration. Flat ₹3,00,000/year.
+
+## CUSTOMER SUPPORT DESK
+
+SKU: SUP-DESK-03. Features ticketing, SLA management, and knowledge base. Starts at ₹8,000/user/year.
+
+## AI INTELLIGENCE MODULE
+
+SKU: AI-MOD-04. Features predictive scoring, automated data entry, and smart forecasting. Flat ₹5,00,000/year.
+

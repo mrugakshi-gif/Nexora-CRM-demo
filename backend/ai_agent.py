@@ -152,7 +152,8 @@ def process_chat_query(query: str, session: Session, user_id: str, role: str, ch
                 return res
             result = ""
             for d in docs:
-                result += f"[Source: Document {d.metadata.get('source', 'Unknown')}, Chunk {d.metadata.get('chunk', '?')}]\n"
+                chunk_seq = d.metadata.get('chunk_sequence', d.metadata.get('chunk', '?'))
+                result += f"[Source: Document {d.metadata.get('source', 'Unknown')}, Chunk {chunk_seq}]\n"
                 result += f"{d.page_content}\n\n"
 
             _rag_cache[query_str] = result

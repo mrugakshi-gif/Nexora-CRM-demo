@@ -1,0 +1,69 @@
+CRM Knowledge Base Data Dictionary and Relationship Map
+
+Conceptual schema and cross-module joins
+
+Document ID: CRM-15
+Prepared: 20 September 2026
+Approx. 4 pages
+
+CRM Knowledge Base Data Dictionary and Relationship Map
+
+This plain-text data dictionary describes the conceptual relationships that connect the corpus. It is deliberately implementation-neutral so it remains useful whether the underlying CRM uses a relational database, document store, vector database or another search architecture.
+
+Core entities:
+ACCOUNT -> COMPANY_ID / ACCOUNT_ID
+Fields: name, industry, size, region, annual_revenue, owner, health_status.
+
+CONTACT -> CONTACT_ID + ACCOUNT_ID
+Fields: name, title, department, influence_score, decision_maker_flag, preferred_channel, last_contact_date.
+
+LEAD -> LEAD_ID + ACCOUNT_ID
+Fields: source, stage, budget_status, authority_status, need_status, timing_status, engagement_score, score.
+
+OPPORTUNITY -> OPP_ID + ACCOUNT_ID
+Fields: solution, stage, amount, probability, target_close_date, primary_stakeholders, risk.
+
+CONTRACT -> CONTRACT_ID + ACCOUNT_ID
+Fields: status, start_date, end_date, renewal_rule, notice_period, billing_terms, legal_notes.
+
+CASE -> CASE_ID + ACCOUNT_ID
+Fields: intent, priority, status, summary, sentiment, opened_date, resolved_date.
+
+CAMPAIGN -> CAMPAIGN_ID
+Fields: theme, target_accounts, spend, engaged, MQLs, SQLs, influenced_pipeline.
+
+PRODUCT -> PRODUCT_ID
+Fields: name, category, list_price, use_case, bundle_rules.
+
+EXTERNAL_EVENT -> EVENT_ID + ACCOUNT_ID
+Fields: source, publication_date, event_type, summary, source_url, confidence.
+
+PREDICTION -> PRED_ID + ACCOUNT_ID or LEAD_ID
+Fields: model_name, score, prediction_label, timestamp, feature_snapshot, explanation.
+
+Key joins:
+- ACCOUNT is the central B2B entity.
+- CONTACT, LEAD, OPPORTUNITY, CONTRACT, CASE and PREDICTION should usually link through ACCOUNT_ID.
+- PRODUCT links to OPPORTUNITY through an opportunity-product relationship.
+- CAMPAIGN links to ACCOUNT through campaign-membership records.
+- EXTERNAL_EVENT links to ACCOUNT only after entity resolution.
+- PREDICTION must store the feature snapshot used at prediction time.
+
+Data-quality rules:
+1. Preserve stable IDs even when display names change.
+2. Do not overwrite historical dates.
+3. Keep source and timestamp for external facts.
+4. Use null/unknown when a value is missing instead of fabricating a default.
+5. Maintain aliases for duplicate or renamed entities.
+
+Questions enabled by this map
+
+Join an opportunity to its account, primary stakeholder and open support cases.
+
+Find accounts with an upcoming renewal and an elevated churn prediction.
+
+Compare a campaign-engaged contact with the opportunity owner.
+
+Explain which records were used to answer a cross-module CRM question.
+
+Detect when a prediction was made from an outdated feature snapshot.

@@ -1,0 +1,34 @@
+Competitive Intelligence Notes
+
+Compact competitor comparison retrieval source
+
+Document ID: CRM-12
+Prepared: 20 September 2026
+Approx. 3 pages
+
+Competitive Intelligence Notes
+
+This text file provides a compact fictional competitor set for retrieval and comparison testing. Competitors are invented; any similarity to real organizations is coincidental.
+
+Competitor AtlasCRM: Strengths - mature workflow customization and broad integrations. Risks - complex administration for smaller teams. Best fit - enterprises with dedicated CRM operations.
+
+Competitor ClearFlow: Strengths - fast deployment and strong customer-service workflow. Risks - narrower analytics depth. Best fit - service-heavy mid-market companies.
+
+Competitor SignalForge: Strengths - account intelligence and predictive analytics. Risks - higher implementation dependency on clean data. Best fit - organizations with strong data governance.
+
+Competitor DeskPilot: Strengths - support automation and knowledge retrieval. Risks - less depth in enterprise opportunity forecasting. Best fit - customer-service-first organizations.
+
+Competitive comparison rule:
+- Compare by documented capability, fit, implementation needs, data requirements and commercial assumptions.
+- Do not treat a vendor's marketing claim as verified performance.
+- Preserve the source and date for any external claim.
+
+Questions
+
+Which competitor is strongest for a service-heavy deployment according to these notes?
+
+Which competitor is dependent on clean data?
+
+What information is still missing before making a fair comparison?
+
+Which claims require external verification?
