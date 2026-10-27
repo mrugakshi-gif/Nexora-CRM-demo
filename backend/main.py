@@ -55,13 +55,19 @@ default_origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "http://localhost:3000",
+    "https://nexora-crm-demo-u4fy.vercel.app",
 ]
 env_origins = [o.strip() for o in os.environ.get("CORS_ORIGINS", "").split(",") if o.strip()]
 origins = list(dict.fromkeys(default_origins + env_origins))
 
+# Regex to safely match Vercel preview/production deployments for this project
+# e.g., https://nexora-crm-demo-u4fy.vercel.app or https://nexora-crm-demo-*.vercel.app
+vercel_origin_regex = r"^https:\/\/nexora-crm-demo[a-zA-Z0-9-]*\.vercel\.app$"
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
+    allow_origin_regex=vercel_origin_regex,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
