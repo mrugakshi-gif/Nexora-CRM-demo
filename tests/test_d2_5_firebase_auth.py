@@ -179,3 +179,13 @@ class TestFirebaseAuth:
             assert response.json()["detail"] == "CRM account not found for this email: nonexistent.evaluator@example.com"
             assert not (tmp_path / "scratch").exists()
 
+    # 18. Seeded Admin user USR-0075 matches intended demo Firebase account
+    def test_seeded_admin_profile_USR_0075(self):
+        import pandas as pd
+        df = pd.read_csv("data/source/users.csv")
+        admin_row = df[df["user_id"] == "USR-0075"].iloc[0]
+        assert admin_row["email"] == "mrugakshi759@gmail.com"
+        assert admin_row["role"] == "Admin"
+        assert bool(admin_row["is_active"]) is True
+
+
