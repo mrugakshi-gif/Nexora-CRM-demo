@@ -1,0 +1,21 @@
+industry_id,industry_name,industry_category,is_active
+IND-01,IT & Software Services,Technology,True
+IND-02,Manufacturing (Industrial/Engineering),Manufacturing,True
+IND-03,Manufacturing (Textiles & Apparel),Manufacturing,True
+IND-04,Pharmaceuticals & Healthcare,Services,True
+IND-05,FMCG & Retail,Trade & Retail,True
+IND-06,BFSI,Services,True
+IND-07,Logistics & Supply Chain,Services,True
+IND-08,Real Estate & Construction,Manufacturing,True
+IND-09,Education & EdTech,Services,True
+IND-10,Automotive & Auto Components,Manufacturing,True
+IND-11,Agriculture & Agri-Business,Primary Sector,True
+IND-12,Media & Entertainment,Services,True
+IND-13,Energy & Power,Primary Sector,True
+IND-14,E-commerce,Trade & Retail,True
+IND-15,Hospitality & Travel,Services,True
+IND-16,Telecom,Technology,True
+IND-17,Chemicals,Manufacturing,True
+IND-18,Infrastructure/EPC,Manufacturing,True
+IND-19,Professional Services,Services,True
+IND-20,Public Sector/Government,Public Sector,True

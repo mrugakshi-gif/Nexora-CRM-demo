@@ -1,0 +1,118 @@
+INDIAN B2B CRM DATASET — TEXT ER DIAGRAM
+(→ reads "has many" / "references"; [self] = self-referencing FK)
+
+                                   +----------------+
+                                   |   industries   |
+                                   +----------------+
+                                     |  |  |    |
+              +----------------------+  |  |    +--------------------+
+              |                         |  |                         |
+              v                         v  v                         v
+      +--------------+           +-----------+              +---------------+
+      |  territories |           | campaigns |<-------+      |     leads     |
+      +--------------+           +-----------+        |      | (industry_   |
+        |        |                     |               |      |  interest)   |
+        |        v                     |               |      +---------------+
+        |  +--------------+            |               |
+        |  |  departments |<-----------+               |
+        |  +--------------+  (owner_department_id)      |
+        |        |                                       |
+        |        v                                       |
+        |  +--------------+                               |
+        +->|  sales_reps  |--[self: manager_rep_id]-------+
+           +--------------+
+             |   |   |   |   \
+             |   |   |   |    \___________________________
+             |   |   |   |                                 \
+             v   |   v   v                                  v
+     +-----------+ | +-------------+                 +--------------+
+     | companies | | | opportunities|<---------------|customer_supp.|
+     +-----------+ | +-------------+  (csm_rep_id via  |    cases     |
+      |   |   |     |     |    |        customers)     +--------------+
+      |   |   |     |     |    |                              ^
+      |   |   |     |     |    +----------------+             |
+      |   |   |     |     |                     |             |
+      |   |   |     v     v                     v             |
+      |   |   | +-----------------+   +--------------------+  |
+      |   |   | |opportunity_     |   |opportunity_stage_  |  |
+      |   |   | | products        |   | history            |  |
+      |   |   | +-----------------+   +--------------------+  |
+      |   |   |        ^
+      |   |   |        |
+      |   |   |   +-----------+
+      |   |   +-->| products  |
+      |   |       +-----------+
+      |   |
+      |   v
+      | +----------+        +--------------------+
+      | | contacts |------->| campaign_responses |
+      | +----------+        +--------------------+
+      |   |    |                     ^
+      |   |    |                     |
+      |   |    +---------------------+  (contact_id)
+      |   v
+      |  +-------+        +--------------------+
+      +->| leads |------->| lead_status_history |
+         +-------+        +--------------------+
+           |  |     ^
+           |  |     |
+           |  +-----+  [self: is_duplicate_of_lead_id]
+           |
+           v  (source_lead_id, only if reached Sales Qualified (SQL) and
+               later produced an opportunity)
+     +---------------+
+     | opportunities |  (see above — created only from SQL leads)
+     +---------------+
+           |
+           v  (originating_opportunity_id, only if Closed Won)
+     +-----------+
+     | customers |
+     +-----------+
+        |     |
+        v     v
+  +-------------+   +----------------------+
+  | customer_   |   | customer_support_    |
+  | transactions|   |   cases              |
+  +-------------+   +----------------------+
+
+
+DOWNSTREAM: ML-ready datasets (derived — read-only, not part of the
+transactional graph above; each keeps FK columns back into it for
+traceability)
+
+  leads ───────────────► lead_conversion_dataset
+  leads ───────────────► lead_scoring_dataset
+  opportunities ────────► sales_forecasting_dataset   (aggregated by
+  sales_reps/departments ┘                             department × month)
+  customers ────────────► customer_segmentation_dataset
+  customers ────────────► churn_prediction_dataset
+  customer_transactions ─┘ (both segmentation and churn also read
+  customer_support_cases ┘  transactions/support-cases for RFM/engagement
+                             features)
+
+
+KEY
+
+  ──►   one-to-many (parent has many child rows)
+  ─0►   optional (nullable FK / not every parent row produces a child)
+  [self]  self-referencing FK on the same table
+
+ACTIVITIES (fans in from every stage of the funnel — not drawn above to
+keep the main diagram legible; each activity row carries whichever of
+these five FKs its own context involves, and may carry none of them for
+a general internal task):
+
+  leads ─────────────┐
+  contacts ───────────┤
+  companies ───────────┼──0►  activities   ◄──  sales_reps (always populated
+  opportunities ───────┤                          -- every activity has an
+  customers ──────────┘                          owning/performing rep)
+
+FUNNEL GATE (enforced by generation + validation, not just by FK type):
+
+  lead (Sales Qualified (SQL)) ──► opportunity ──(Closed Won only)──► customer ──► transactions / support cases
+
+A lead that never reaches Sales Qualified never gets an opportunity_id
+pointing to it; an opportunity that is Closed Lost or still open never
+gets a customer_id pointing to it. This is the single most important
+business rule in the schema — see business_rules.md.

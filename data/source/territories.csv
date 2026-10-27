@@ -1,0 +1,19 @@
+territory_id,territory_name,region,primary_industry_focus
+TERR-001,Delhi-NCR Core,North,IND-01
+TERR-002,Punjab & Chandigarh,North,
+TERR-003,Rajasthan,North,
+TERR-004,UP (Lucknow & Central UP),North,
+TERR-005,Mumbai Metro,West,IND-06
+TERR-006,Pune,West,IND-01
+TERR-007,Gujarat (Ahmedabad-Surat),West,IND-03
+TERR-008,Maharashtra (Nagpur-Nashik),West,
+TERR-009,Bengaluru,South,IND-01
+TERR-010,Chennai,South,IND-10
+TERR-011,Hyderabad,South,IND-01
+TERR-012,Kerala (Kochi),South,
+TERR-013,Tamil Nadu (Coimbatore),South,IND-02
+TERR-014,Andhra Pradesh (Vizag),South,
+TERR-015,Kolkata & West Bengal,East,
+TERR-016,Odisha & East Coast,East,
+TERR-017,Bihar & Jharkhand,East,
+TERR-018,MP & Chhattisgarh (Indore-Raipur),Central,

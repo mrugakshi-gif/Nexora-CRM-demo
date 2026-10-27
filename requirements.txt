@@ -1,0 +1,15 @@
+# Core — needed for validate_dataset.py and the generator scripts
+pandas>=2.0,<3.0
+
+# PostgreSQL loader (scripts/load_postgres.py)
+psycopg2-binary>=2.9,<3.0
+
+# MySQL loader (scripts/load_mysql.py)
+mysql-connector-python>=8.0,<9.0
+
+# Optional — only needed if you build the ML models described in
+# docs/ml_project_structure.md; not required to load or validate the data.
+scikit-learn>=1.3,<2.0
+joblib
+# xgboost>=2.0,<3.0
+# lightgbm>=4.0,<5.0

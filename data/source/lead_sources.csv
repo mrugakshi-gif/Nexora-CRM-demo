@@ -1,0 +1,13 @@
+lead_source_id,source_name,source_category
+SRC-01,Website Form,Inbound
+SRC-02,Inbound Call,Inbound
+SRC-03,Referral,Referral
+SRC-04,Trade Show/Exhibition,Outbound
+SRC-05,LinkedIn Outbound,Outbound
+SRC-06,Cold Email,Outbound
+SRC-07,Partner Channel,Partner
+SRC-08,IndiaMART/TradeIndia Listing,Inbound
+SRC-09,Google Ads,Inbound
+SRC-10,Organic Search,Inbound
+SRC-11,Webinar,Inbound
+SRC-12,Existing Customer Upsell,Referral

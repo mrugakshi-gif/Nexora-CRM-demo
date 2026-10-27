@@ -1,0 +1,182 @@
+[
+  {
+    "model_name": "Lead Conversion Prediction",
+    "dataset": "lead_conversion_dataset.csv",
+    "target": "label_converted",
+    "feature_names": [
+      "industry_id",
+      "region",
+      "company_size_at_lead_time",
+      "lead_source_category",
+      "campaign_sourced_flag",
+      "contact_seniority_level",
+      "contact_is_decision_maker",
+      "estimated_budget_known",
+      "estimated_budget_band",
+      "days_since_created_to_cutoff",
+      "num_status_transitions_before_cutoff",
+      "rep_assigned_flag",
+      "rep_trailing_conversion_rate",
+      "is_duplicate_lead"
+    ],
+    "model_type": "RandomForestClassifier",
+    "random_seed": 42,
+    "dataset_row_count": 1083,
+    "class_distribution": {
+      "0": 885,
+      "1": 198
+    },
+    "evaluation_metrics": {
+      "ROC-AUC": 0.9003531073446327,
+      "Precision": 0.6129032258064516,
+      "Recall": 0.475,
+      "F1": 0.5352112676056338,
+      "ConfusionMatrix": [
+        [
+          165,
+          12
+        ],
+        [
+          21,
+          19
+        ]
+      ]
+    },
+    "artifact_filename": "lead_conversion_pipeline.joblib",
+    "training_date": "2026-09-19T19:32:12.874739"
+  },
+  {
+    "model_name": "Lead Scoring",
+    "dataset": "lead_scoring_dataset.csv",
+    "target": "label_converted",
+    "feature_names": [
+      "industry_id",
+      "region",
+      "company_size_at_lead_time",
+      "lead_source_category",
+      "campaign_sourced_flag",
+      "contact_seniority_level",
+      "contact_is_decision_maker",
+      "contact_department",
+      "estimated_budget_known",
+      "estimated_budget_band",
+      "days_since_created_to_cutoff",
+      "num_status_transitions_before_cutoff",
+      "rep_assigned_flag",
+      "rep_trailing_conversion_rate"
+    ],
+    "model_type": "LogisticRegression",
+    "random_seed": 42,
+    "dataset_row_count": 1083,
+    "class_distribution": {
+      "0": 885,
+      "1": 198
+    },
+    "evaluation_metrics": {
+      "ROC-AUC": 0.8723163841807909,
+      "Precision": 0.47619047619047616,
+      "Recall": 0.75,
+      "F1": 0.5825242718446602,
+      "ConfusionMatrix": [
+        [
+          144,
+          33
+        ],
+        [
+          10,
+          30
+        ]
+      ]
+    },
+    "artifact_filename": "lead_scoring_pipeline.joblib",
+    "training_date": "2026-09-19T19:32:12.909370"
+  },
+  {
+    "model_name": "Sales Forecasting",
+    "dataset": "sales_forecasting_dataset.csv",
+    "target": "label_actual_amount_inr",
+    "feature_names": [
+      "pipeline_value_open_at_period_start_inr",
+      "num_open_opportunities_at_period_start",
+      "historical_win_rate_trailing_3mo",
+      "revenue_trailing_3mo_inr",
+      "avg_deal_cycle_days_trailing_6mo",
+      "active_rep_count",
+      "seasonality_month",
+      "month",
+      "year"
+    ],
+    "model_type": "LinearRegression",
+    "random_seed": null,
+    "dataset_row_count": 172,
+    "evaluation_metrics": {
+      "MAE": 121687.41612784448,
+      "RMSE": 139956.76323891772,
+      "R2": -0.470374035808798,
+      "Baseline_MAE": 110314.85714285716
+    },
+    "artifact_filename": "sales_forecasting_pipeline.joblib",
+    "training_date": "2026-09-19T19:32:12.926074"
+  },
+  {
+    "model_name": "Customer Segmentation",
+    "dataset": "customer_segmentation_dataset.csv",
+    "target": "None (Unsupervised)",
+    "feature_names": [
+      "recency_days_since_last_transaction",
+      "frequency_transactions_last_12mo",
+      "monetary_total_last_12mo_inr",
+      "tenure_months_at_snapshot",
+      "support_case_count_last_12mo",
+      "avg_satisfaction_score",
+      "product_category_diversity",
+      "industry_id",
+      "company_size_band",
+      "customer_tier",
+      "contract_type"
+    ],
+    "model_type": "KMeans",
+    "random_seed": 42,
+    "dataset_row_count": 244,
+    "evaluation_metrics": {
+      "SilhouetteScore": 0.16829936501184486,
+      "ClusterSizes": {
+        "0": 77,
+        "1": 124,
+        "2": 43
+      }
+    },
+    "artifact_filename": "customer_segmentation_pipeline.joblib",
+    "training_date": "2026-09-19T19:32:12.972807"
+  },
+  {
+    "model_name": "Customer Churn Prediction",
+    "dataset": "churn_prediction_dataset.csv",
+    "target": "label_churned_within_horizon",
+    "feature_names": [
+      "tenure_months_at_snapshot",
+      "days_since_last_transaction_at_snapshot",
+      "support_case_count_trailing_90d",
+      "avg_case_priority_trailing_90d",
+      "contract_type",
+      "customer_tier",
+      "transaction_amount_trailing_90d_inr",
+      "transaction_amount_trend_90d_inr",
+      "horizon_days"
+    ],
+    "model_type": "LogisticRegression",
+    "random_seed": 42,
+    "dataset_row_count": 59,
+    "class_distribution": {
+      "0": 44,
+      "1": 15
+    },
+    "evaluation_metrics": {
+      "CV_ROC-AUC_mean": 0.6412037037037037,
+      "CV_PR-AUC_mean": 0.5323809523809524
+    },
+    "warnings": "Extremely small dataset (59 rows). CV metrics are directional. Do not oversell.",
+    "artifact_filename": "churn_prediction_pipeline.joblib",
+    "training_date": "2026-09-19T19:32:13.039049"
+  }
+]

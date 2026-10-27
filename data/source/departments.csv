@@ -1,0 +1,8 @@
+department_id,department_name,region_focus,created_at
+DEPT-0001,Enterprise Sales,Pan-India,2022-04-01
+DEPT-0002,SMB Sales,Pan-India,2022-04-01
+DEPT-0003,Inside Sales,Pan-India,2022-04-01
+DEPT-0004,Customer Success,Pan-India,2022-04-01
+DEPT-0005,Marketing,Pan-India,2022-04-01
+DEPT-0006,Sales Operations,Pan-India,2022-04-01
+DEPT-0007,Channel Partnerships,Pan-India,2022-04-01

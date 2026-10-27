@@ -1,0 +1,1157 @@
+{
+  "1_duplicate_rows": {
+    "industries": 0,
+    "territories": 0,
+    "departments": 0,
+    "lead_sources": 0,
+    "products": 0,
+    "sales_reps": 0,
+    "campaigns": 0,
+    "companies": 0,
+    "contacts": 0,
+    "leads": 0,
+    "lead_status_history": 0,
+    "campaign_responses": 0,
+    "opportunities": 0,
+    "opportunity_products": 0,
+    "opportunity_stage_history": 0,
+    "customers": 0,
+    "customer_transactions": 0,
+    "customer_support_cases": 0,
+    "activities": 0,
+    "lead_conversion_dataset": 0,
+    "lead_scoring_dataset": 0,
+    "sales_forecasting_dataset": 0,
+    "customer_segmentation_dataset": 0,
+    "churn_prediction_dataset": 0
+  },
+  "2_duplicate_primary_keys": {
+    "industries": 0,
+    "territories": 0,
+    "departments": 0,
+    "lead_sources": 0,
+    "products": 0,
+    "sales_reps": 0,
+    "campaigns": 0,
+    "companies": 0,
+    "contacts": 0,
+    "leads": 0,
+    "lead_status_history": 0,
+    "campaign_responses": 0,
+    "opportunities": 0,
+    "opportunity_products": 0,
+    "opportunity_stage_history": 0,
+    "customers": 0,
+    "customer_transactions": 0,
+    "customer_support_cases": 0,
+    "activities": 0,
+    "lead_conversion_dataset": 0,
+    "lead_scoring_dataset": 0,
+    "sales_forecasting_dataset": 0,
+    "customer_segmentation_dataset": 0,
+    "churn_prediction_dataset": 0
+  },
+  "3_duplicate_business_entities": {
+    "companies_name+city": 0,
+    "companies_website_domain": 0,
+    "companies_gstin": 0,
+    "contacts_email": 0,
+    "sales_reps_email": 0,
+    "products_name": 0,
+    "customers_company_id": 0
+  },
+  "4_missing_required_values": {
+    "companies": {
+      "company_id": 0,
+      "company_name": 0,
+      "industry_id": 0,
+      "city": 0,
+      "state": 0,
+      "company_size_band": 0,
+      "account_status": 0
+    },
+    "contacts": {
+      "contact_id": 0,
+      "company_id": 0,
+      "full_name": 0,
+      "email": 0,
+      "job_title": 0
+    },
+    "leads": {
+      "lead_id": 0,
+      "company_id": 0,
+      "lead_source_id": 0,
+      "lead_status": 0,
+      "created_at": 0
+    },
+    "opportunities": {
+      "opportunity_id": 0,
+      "company_id": 0,
+      "owner_rep_id": 0,
+      "pipeline_stage": 0,
+      "deal_value_inr": 0,
+      "created_at": 0,
+      "probability_pct": 0
+    },
+    "opportunity_products": {
+      "opportunity_product_id": 0,
+      "opportunity_id": 0,
+      "product_id": 0,
+      "quantity": 0,
+      "unit_price_inr": 0,
+      "line_total_inr": 0
+    },
+    "customers": {
+      "customer_id": 0,
+      "company_id": 0,
+      "originating_opportunity_id": 0,
+      "customer_since": 0,
+      "customer_status": 0
+    },
+    "customer_transactions": {
+      "transaction_id": 0,
+      "customer_id": 0,
+      "transaction_date": 0,
+      "amount_inr": 0,
+      "transaction_type": 0
+    },
+    "sales_reps": {
+      "rep_id": 0,
+      "full_name": 0,
+      "email": 0,
+      "department_id": 0,
+      "role": 0,
+      "hire_date": 0
+    },
+    "campaigns": {
+      "campaign_id": 0,
+      "campaign_name": 0,
+      "campaign_type": 0,
+      "start_date": 0
+    },
+    "activities": {
+      "activity_id": 0,
+      "activity_type": 0,
+      "subject": 0,
+      "activity_date": 0,
+      "due_date": 0,
+      "status": 0,
+      "priority": 0,
+      "sales_rep_id": 0,
+      "created_at": 0,
+      "updated_at": 0
+    }
+  },
+  "4b_acceptable_null_values_informational": {
+    "companies": {
+      "gstin": 103,
+      "website_domain": 98,
+      "sub_industry": 61,
+      "founded_year": 243,
+      "account_owner_rep_id": 62
+    },
+    "contacts": {
+      "linkedin_handle": 503
+    },
+    "leads": {
+      "contact_id": 0,
+      "campaign_id": 729,
+      "assigned_rep_id": 43,
+      "disqualification_reason": 715,
+      "first_contacted_at": 174,
+      "qualified_at": 603,
+      "converted_at": 885,
+      "is_duplicate_of_lead_id": 1064
+    },
+    "opportunities": {
+      "primary_contact_id": 0,
+      "source_lead_id": 0,
+      "actual_close_date": 88,
+      "close_outcome": 88,
+      "loss_reason": 139,
+      "competitor_name": 188
+    },
+    "customers": {
+      "renewal_date": 3
+    },
+    "customer_transactions": {
+      "opportunity_id": 13,
+      "invoice_number": 0
+    },
+    "customer_support_cases": {
+      "resolved_at": 33,
+      "satisfaction_score": 33
+    },
+    "sales_reps": {
+      "manager_rep_id": 18,
+      "territory_id": 0,
+      "termination_date": 76
+    },
+    "campaigns": {
+      "target_industry_id": 55,
+      "owner_department_id": 0,
+      "end_date": 1
+    },
+    "activities": {
+      "lead_id": 515,
+      "contact_id": 204,
+      "company_id": 96,
+      "opportunity_id": 1860,
+      "customer_id": 2222,
+      "outcome": 1033,
+      "next_follow_up_date": 1517
+    }
+  },
+  "5_unexpected_nulls_conditional_rules": {
+    "leads.converted_without_converted_at": 0,
+    "leads.disqualified_without_reason": 0,
+    "opportunities.closed_won_without_close_date": 0,
+    "opportunities.closed_lost_without_loss_reason": 0,
+    "opportunities.closed_without_close_outcome": 0
+  },
+  "6_7_invalid_fk_and_orphans": {
+    "companies.industry_id->industries.industry_id": 0,
+    "companies.account_owner_rep_id->sales_reps.rep_id": 0,
+    "contacts.company_id->companies.company_id": 0,
+    "sales_reps.department_id->departments.department_id": 0,
+    "sales_reps.manager_rep_id->sales_reps.rep_id": 0,
+    "sales_reps.territory_id->territories.territory_id": 0,
+    "campaigns.target_industry_id->industries.industry_id": 0,
+    "campaigns.owner_department_id->departments.department_id": 0,
+    "leads.company_id->companies.company_id": 0,
+    "leads.contact_id->contacts.contact_id": 0,
+    "leads.lead_source_id->lead_sources.lead_source_id": 0,
+    "leads.assigned_rep_id->sales_reps.rep_id": 0,
+    "leads.campaign_id->campaigns.campaign_id": 0,
+    "leads.industry_interest_id->industries.industry_id": 0,
+    "leads.is_duplicate_of_lead_id->leads.lead_id": 0,
+    "lead_status_history.lead_id->leads.lead_id": 0,
+    "lead_status_history.changed_by_rep_id->sales_reps.rep_id": 0,
+    "campaign_responses.campaign_id->campaigns.campaign_id": 0,
+    "campaign_responses.contact_id->contacts.contact_id": 0,
+    "campaign_responses.resulted_in_lead_id->leads.lead_id": 0,
+    "opportunities.company_id->companies.company_id": 0,
+    "opportunities.owner_rep_id->sales_reps.rep_id": 0,
+    "opportunities.source_lead_id->leads.lead_id": 0,
+    "opportunities.primary_contact_id->contacts.contact_id": 0,
+    "opportunity_products.opportunity_id->opportunities.opportunity_id": 0,
+    "opportunity_products.product_id->products.product_id": 0,
+    "opportunity_stage_history.opportunity_id->opportunities.opportunity_id": 0,
+    "customers.company_id->companies.company_id": 0,
+    "customers.originating_opportunity_id->opportunities.opportunity_id": 0,
+    "customers.csm_rep_id->sales_reps.rep_id": 0,
+    "customer_transactions.customer_id->customers.customer_id": 0,
+    "customer_transactions.opportunity_id->opportunities.opportunity_id": 0,
+    "customer_support_cases.customer_id->customers.customer_id": 0,
+    "customer_support_cases.contact_id->contacts.contact_id": 0,
+    "activities.lead_id->leads.lead_id": 0,
+    "activities.contact_id->contacts.contact_id": 0,
+    "activities.company_id->companies.company_id": 0,
+    "activities.opportunity_id->opportunities.opportunity_id": 0,
+    "activities.customer_id->customers.customer_id": 0,
+    "activities.sales_rep_id->sales_reps.rep_id": 0,
+    "leads.contact_id_company_mismatch": 0,
+    "opportunities.primary_contact_id_company_mismatch": 0,
+    "customers.company_mismatch_with_originating_opportunity": 0,
+    "customer_support_cases.contact_company_mismatch": 0
+  },
+  "6b_repeated_foreign_keys_informational": {
+    "note": "Repeated FK values are EXPECTED and are never treated as duplicates or errors -- a single parent row (company/customer/opportunity/lead/sales rep/etc.) legitimately has many child rows. See 2_duplicate_primary_keys for the actual duplicate-key check (primary-key columns only) and 1_duplicate_rows for whole-row duplicates.",
+    "by_relationship": {
+      "companies.industry_id": {
+        "distinct_values_referenced": 20,
+        "rows_with_this_fk_populated": 1200,
+        "max_repeat_count": 222,
+        "example_most_repeated_value": "IND-01",
+        "is_this_an_error": false
+      },
+      "companies.account_owner_rep_id": {
+        "distinct_values_referenced": 76,
+        "rows_with_this_fk_populated": 1138,
+        "max_repeat_count": 37,
+        "example_most_repeated_value": "REP-0059",
+        "is_this_an_error": false
+      },
+      "contacts.company_id": {
+        "distinct_values_referenced": 606,
+        "rows_with_this_fk_populated": 925,
+        "max_repeat_count": 4,
+        "example_most_repeated_value": "COMP-000941",
+        "is_this_an_error": false
+      },
+      "sales_reps.department_id": {
+        "distinct_values_referenced": 6,
+        "rows_with_this_fk_populated": 80,
+        "max_repeat_count": 18,
+        "example_most_repeated_value": "DEPT-0003",
+        "is_this_an_error": false
+      },
+      "sales_reps.manager_rep_id": {
+        "distinct_values_referenced": 7,
+        "rows_with_this_fk_populated": 62,
+        "max_repeat_count": 14,
+        "example_most_repeated_value": "REP-0061",
+        "is_this_an_error": false
+      },
+      "sales_reps.territory_id": {
+        "distinct_values_referenced": 18,
+        "rows_with_this_fk_populated": 80,
+        "max_repeat_count": 9,
+        "example_most_repeated_value": "TERR-001",
+        "is_this_an_error": false
+      },
+      "campaigns.target_industry_id": {
+        "distinct_values_referenced": 20,
+        "rows_with_this_fk_populated": 125,
+        "max_repeat_count": 10,
+        "example_most_repeated_value": "IND-08",
+        "is_this_an_error": false
+      },
+      "campaigns.owner_department_id": {
+        "distinct_values_referenced": 2,
+        "rows_with_this_fk_populated": 180,
+        "max_repeat_count": 97,
+        "example_most_repeated_value": "DEPT-0005",
+        "is_this_an_error": false
+      },
+      "leads.company_id": {
+        "distinct_values_referenced": 606,
+        "rows_with_this_fk_populated": 1083,
+        "max_repeat_count": 8,
+        "example_most_repeated_value": "COMP-000823",
+        "is_this_an_error": false
+      },
+      "leads.contact_id": {
+        "distinct_values_referenced": 792,
+        "rows_with_this_fk_populated": 1083,
+        "max_repeat_count": 6,
+        "example_most_repeated_value": "CONT-000109",
+        "is_this_an_error": false
+      },
+      "leads.lead_source_id": {
+        "distinct_values_referenced": 11,
+        "rows_with_this_fk_populated": 1083,
+        "max_repeat_count": 222,
+        "example_most_repeated_value": "SRC-01",
+        "is_this_an_error": false
+      },
+      "leads.assigned_rep_id": {
+        "distinct_values_referenced": 59,
+        "rows_with_this_fk_populated": 1040,
+        "max_repeat_count": 42,
+        "example_most_repeated_value": "REP-0013",
+        "is_this_an_error": false
+      },
+      "leads.campaign_id": {
+        "distinct_values_referenced": 104,
+        "rows_with_this_fk_populated": 354,
+        "max_repeat_count": 17,
+        "example_most_repeated_value": "CAMP-076",
+        "is_this_an_error": false
+      },
+      "leads.industry_interest_id": {
+        "distinct_values_referenced": 20,
+        "rows_with_this_fk_populated": 935,
+        "max_repeat_count": 147,
+        "example_most_repeated_value": "IND-01",
+        "is_this_an_error": false
+      },
+      "leads.is_duplicate_of_lead_id": {
+        "distinct_values_referenced": 19,
+        "rows_with_this_fk_populated": 19,
+        "max_repeat_count": 1,
+        "example_most_repeated_value": "LEAD-000029",
+        "is_this_an_error": false
+      },
+      "lead_status_history.lead_id": {
+        "distinct_values_referenced": 1083,
+        "rows_with_this_fk_populated": 4129,
+        "max_repeat_count": 6,
+        "example_most_repeated_value": "LEAD-000512",
+        "is_this_an_error": false
+      },
+      "lead_status_history.changed_by_rep_id": {
+        "distinct_values_referenced": 59,
+        "rows_with_this_fk_populated": 3046,
+        "max_repeat_count": 119,
+        "example_most_repeated_value": "REP-0049",
+        "is_this_an_error": false
+      },
+      "campaign_responses.campaign_id": {
+        "distinct_values_referenced": 129,
+        "rows_with_this_fk_populated": 676,
+        "max_repeat_count": 39,
+        "example_most_repeated_value": "CAMP-076",
+        "is_this_an_error": false
+      },
+      "campaign_responses.contact_id": {
+        "distinct_values_referenced": 491,
+        "rows_with_this_fk_populated": 676,
+        "max_repeat_count": 6,
+        "example_most_repeated_value": "CONT-000740",
+        "is_this_an_error": false
+      },
+      "campaign_responses.resulted_in_lead_id": {
+        "distinct_values_referenced": 354,
+        "rows_with_this_fk_populated": 354,
+        "max_repeat_count": 1,
+        "example_most_repeated_value": "LEAD-000237",
+        "is_this_an_error": false
+      },
+      "opportunities.company_id": {
+        "distinct_values_referenced": 173,
+        "rows_with_this_fk_populated": 198,
+        "max_repeat_count": 5,
+        "example_most_repeated_value": "COMP-000114",
+        "is_this_an_error": false
+      },
+      "opportunities.owner_rep_id": {
+        "distinct_values_referenced": 50,
+        "rows_with_this_fk_populated": 198,
+        "max_repeat_count": 11,
+        "example_most_repeated_value": "REP-0058",
+        "is_this_an_error": false
+      },
+      "opportunities.source_lead_id": {
+        "distinct_values_referenced": 198,
+        "rows_with_this_fk_populated": 198,
+        "max_repeat_count": 1,
+        "example_most_repeated_value": "LEAD-000002",
+        "is_this_an_error": false
+      },
+      "opportunities.primary_contact_id": {
+        "distinct_values_referenced": 186,
+        "rows_with_this_fk_populated": 198,
+        "max_repeat_count": 3,
+        "example_most_repeated_value": "CONT-000079",
+        "is_this_an_error": false
+      },
+      "opportunity_products.opportunity_id": {
+        "distinct_values_referenced": 198,
+        "rows_with_this_fk_populated": 388,
+        "max_repeat_count": 4,
+        "example_most_repeated_value": "OPP-000176",
+        "is_this_an_error": false
+      },
+      "opportunity_products.product_id": {
+        "distinct_values_referenced": 14,
+        "rows_with_this_fk_populated": 388,
+        "max_repeat_count": 94,
+        "example_most_repeated_value": "PROD-002",
+        "is_this_an_error": false
+      },
+      "opportunity_stage_history.opportunity_id": {
+        "distinct_values_referenced": 198,
+        "rows_with_this_fk_populated": 703,
+        "max_repeat_count": 6,
+        "example_most_repeated_value": "OPP-000001",
+        "is_this_an_error": false
+      },
+      "customers.company_id": {
+        "distinct_values_referenced": 48,
+        "rows_with_this_fk_populated": 48,
+        "max_repeat_count": 1,
+        "example_most_repeated_value": "COMP-000056",
+        "is_this_an_error": false
+      },
+      "customers.originating_opportunity_id": {
+        "distinct_values_referenced": 48,
+        "rows_with_this_fk_populated": 48,
+        "max_repeat_count": 1,
+        "example_most_repeated_value": "OPP-000007",
+        "is_this_an_error": false
+      },
+      "customers.csm_rep_id": {
+        "distinct_values_referenced": 15,
+        "rows_with_this_fk_populated": 48,
+        "max_repeat_count": 8,
+        "example_most_repeated_value": "REP-0059",
+        "is_this_an_error": false
+      },
+      "customer_transactions.customer_id": {
+        "distinct_values_referenced": 48,
+        "rows_with_this_fk_populated": 116,
+        "max_repeat_count": 25,
+        "example_most_repeated_value": "CUST-000006",
+        "is_this_an_error": false
+      },
+      "customer_transactions.opportunity_id": {
+        "distinct_values_referenced": 48,
+        "rows_with_this_fk_populated": 103,
+        "max_repeat_count": 20,
+        "example_most_repeated_value": "OPP-000092",
+        "is_this_an_error": false
+      },
+      "customer_support_cases.customer_id": {
+        "distinct_values_referenced": 43,
+        "rows_with_this_fk_populated": 113,
+        "max_repeat_count": 5,
+        "example_most_repeated_value": "CUST-000017",
+        "is_this_an_error": false
+      },
+      "customer_support_cases.contact_id": {
+        "distinct_values_referenced": 60,
+        "rows_with_this_fk_populated": 103,
+        "max_repeat_count": 5,
+        "example_most_repeated_value": "CONT-000169",
+        "is_this_an_error": false
+      },
+      "activities.lead_id": {
+        "distinct_values_referenced": 1083,
+        "rows_with_this_fk_populated": 1844,
+        "max_repeat_count": 5,
+        "example_most_repeated_value": "LEAD-000617",
+        "is_this_an_error": false
+      },
+      "activities.contact_id": {
+        "distinct_values_referenced": 801,
+        "rows_with_this_fk_populated": 2155,
+        "max_repeat_count": 14,
+        "example_most_repeated_value": "CONT-000702",
+        "is_this_an_error": false
+      },
+      "activities.company_id": {
+        "distinct_values_referenced": 653,
+        "rows_with_this_fk_populated": 2263,
+        "max_repeat_count": 23,
+        "example_most_repeated_value": "COMP-000909",
+        "is_this_an_error": false
+      },
+      "activities.opportunity_id": {
+        "distinct_values_referenced": 198,
+        "rows_with_this_fk_populated": 499,
+        "max_repeat_count": 6,
+        "example_most_repeated_value": "OPP-000055",
+        "is_this_an_error": false
+      },
+      "activities.customer_id": {
+        "distinct_values_referenced": 48,
+        "rows_with_this_fk_populated": 137,
+        "max_repeat_count": 4,
+        "example_most_repeated_value": "CUST-000018",
+        "is_this_an_error": false
+      },
+      "activities.sales_rep_id": {
+        "distinct_values_referenced": 76,
+        "rows_with_this_fk_populated": 2359,
+        "max_repeat_count": 78,
+        "example_most_repeated_value": "REP-0058",
+        "is_this_an_error": false
+      }
+    }
+  },
+  "8_invalid_categorical_values": {
+    "companies.company_size_band": {
+      "invalid_values": [],
+      "invalid_count": 0
+    },
+    "companies.account_status": {
+      "invalid_values": [],
+      "invalid_count": 0
+    },
+    "companies.company_type": {
+      "invalid_values": [],
+      "invalid_count": 0
+    },
+    "leads.lead_status": {
+      "invalid_values": [],
+      "invalid_count": 0
+    },
+    "opportunities.pipeline_stage": {
+      "invalid_values": [],
+      "invalid_count": 0
+    },
+    "opportunities.close_outcome": {
+      "invalid_values": [],
+      "invalid_count": 0
+    },
+    "customers.customer_status": {
+      "invalid_values": [],
+      "invalid_count": 0
+    },
+    "customer_transactions.transaction_type": {
+      "invalid_values": [],
+      "invalid_count": 0
+    },
+    "customer_transactions.payment_status": {
+      "invalid_values": [],
+      "invalid_count": 0
+    },
+    "activities.activity_type": {
+      "invalid_values": [],
+      "invalid_count": 0
+    },
+    "activities.status": {
+      "invalid_values": [],
+      "invalid_count": 0
+    },
+    "activities.priority": {
+      "invalid_values": [],
+      "invalid_count": 0
+    }
+  },
+  "9_invalid_dates": {
+    "leads.created_at": {
+      "unparseable": 0,
+      "future_dated": 0,
+      "policy": "never",
+      "violations": 0
+    },
+    "leads.first_contacted_at": {
+      "unparseable": 0,
+      "future_dated": 0,
+      "policy": "never",
+      "violations": 0
+    },
+    "leads.qualified_at": {
+      "unparseable": 0,
+      "future_dated": 0,
+      "policy": "never",
+      "violations": 0
+    },
+    "leads.converted_at": {
+      "unparseable": 0,
+      "future_dated": 0,
+      "policy": "never",
+      "violations": 0
+    },
+    "opportunities.created_at": {
+      "unparseable": 0,
+      "future_dated": 0,
+      "policy": "never",
+      "violations": 0
+    },
+    "opportunities.expected_close_date": {
+      "unparseable": 0,
+      "future_dated": 39,
+      "policy": "always_allowed",
+      "violations": 0
+    },
+    "opportunities.actual_close_date": {
+      "unparseable": 0,
+      "future_dated": 0,
+      "policy": "never",
+      "violations": 0
+    },
+    "customers.customer_since": {
+      "unparseable": 0,
+      "future_dated": 0,
+      "policy": "never",
+      "violations": 0
+    },
+    "customers.renewal_date": {
+      "unparseable": 0,
+      "future_dated": 29,
+      "policy": "conditional",
+      "violations": 0
+    },
+    "customer_transactions.transaction_date": {
+      "unparseable": 0,
+      "future_dated": 0,
+      "policy": "never",
+      "violations": 0
+    },
+    "customer_support_cases.opened_at": {
+      "unparseable": 0,
+      "future_dated": 0,
+      "policy": "never",
+      "violations": 0
+    },
+    "customer_support_cases.resolved_at": {
+      "unparseable": 0,
+      "future_dated": 0,
+      "policy": "never",
+      "violations": 0
+    },
+    "sales_reps.hire_date": {
+      "unparseable": 0,
+      "future_dated": 0,
+      "policy": "never",
+      "violations": 0
+    },
+    "campaigns.start_date": {
+      "unparseable": 0,
+      "future_dated": 0,
+      "policy": "never",
+      "violations": 0
+    },
+    "campaigns.end_date": {
+      "unparseable": 0,
+      "future_dated": 2,
+      "policy": "always_allowed",
+      "violations": 0
+    },
+    "contacts.created_at": {
+      "unparseable": 0,
+      "future_dated": 0,
+      "policy": "never",
+      "violations": 0
+    },
+    "companies.created_at": {
+      "unparseable": 0,
+      "future_dated": 0,
+      "policy": "never",
+      "violations": 0
+    },
+    "activities.activity_date": {
+      "unparseable": 0,
+      "future_dated": 0,
+      "policy": "never",
+      "violations": 0
+    },
+    "activities.due_date": {
+      "unparseable": 0,
+      "future_dated": 178,
+      "policy": "always_allowed",
+      "violations": 0
+    },
+    "activities.next_follow_up_date": {
+      "unparseable": 0,
+      "future_dated": 112,
+      "policy": "always_allowed",
+      "violations": 0
+    },
+    "activities.created_at": {
+      "unparseable": 0,
+      "future_dated": 0,
+      "policy": "never",
+      "violations": 0
+    },
+    "activities.updated_at": {
+      "unparseable": 0,
+      "future_dated": 0,
+      "policy": "never",
+      "violations": 0
+    }
+  },
+  "9b_future_date_policy_violations": {
+    "customers.renewal_date_overdue_while_status_active": {
+      "violations": 0,
+      "affected_customer_ids": []
+    },
+    "customers.renewal_date_before_customer_since": {
+      "violations": 0,
+      "affected_customer_ids": []
+    },
+    "opportunities.expected_close_before_created_at": {
+      "violations": 0,
+      "affected_opportunity_ids": []
+    },
+    "campaigns.end_date_before_start_date": {
+      "violations": 0,
+      "affected_campaign_ids": []
+    }
+  },
+  "26_activities_validation": {
+    "due_date_before_activity_date": {
+      "violations": 0,
+      "affected_activity_ids": []
+    },
+    "next_follow_up_date_not_after_activity_date": {
+      "violations": 0,
+      "affected_activity_ids": []
+    },
+    "activity_date_after_created_or_updated_at": {
+      "violations": 0,
+      "affected_activity_ids": []
+    },
+    "completed_without_outcome": {
+      "violations": 0,
+      "affected_activity_ids": []
+    },
+    "likely_duplicate_business_events": {
+      "violations": 0,
+      "duplicate_groups": [],
+      "note": "a duplicate requires matching ALL of activity_type+company_id+contact_id+opportunity_id+activity_date+subject -- sharing only some of these (e.g. the same subject at a different company) is NOT flagged"
+    },
+    "repeated_content_warnings": {
+      "subject": {
+        "unique_values": 2310,
+        "total_rows": 2359,
+        "max_repeat_count": 4,
+        "max_repeat_share": 0.0017,
+        "flagged_values_over_threshold": []
+      },
+      "description": {
+        "unique_values": 2351,
+        "total_rows": 2359,
+        "max_repeat_count": 2,
+        "max_repeat_share": 0.0008,
+        "flagged_values_over_threshold": []
+      },
+      "note": "informational only -- never fails the run; flags text repeated more than 5 times or over 0.5% of rows so template-collapse can be caught even when it doesn't cross the duplicate-business-event bar above"
+    },
+    "activities_with_no_entity_link": {
+      "count": 96,
+      "note": "informational only -- rule #3 explicitly allows an activity (e.g. a general internal task) to have no lead/contact/company/opportunity/customer link"
+    }
+  },
+  "26b_activities_missing_value_breakdown": {
+    "note": "all patterns below were checked and are logically valid, not defects -- see data_quality_report.md for the reasoning behind each",
+    "customer_id_populated_rate_by_activity_type": {
+      "Call": 0.04,
+      "Demo": 0.0,
+      "Email": 0.036,
+      "Follow-up": 0.075,
+      "Meeting": 0.0,
+      "Negotiation": 0.0,
+      "Proposal Discussion": 0.0,
+      "Site Visit": 0.0,
+      "Support Follow-up": 1.0,
+      "Task": 0.089
+    },
+    "opportunity_id_populated_rate_by_activity_type": {
+      "Call": 0.157,
+      "Demo": 1.0,
+      "Email": 0.03,
+      "Follow-up": 0.162,
+      "Meeting": 0.265,
+      "Negotiation": 1.0,
+      "Proposal Discussion": 1.0,
+      "Site Visit": 1.0,
+      "Support Follow-up": 0.816,
+      "Task": 0.046
+    },
+    "outcome_populated_rate_by_status": {
+      "Cancelled": 0.469,
+      "Completed": 1.0,
+      "In Progress": 0.0,
+      "Pending": 0.0,
+      "Planned": 0.0,
+      "Rescheduled": 0.0
+    },
+    "next_follow_up_date_populated_rate_by_status": {
+      "Cancelled": 0.0,
+      "Completed": 0.448,
+      "In Progress": 0.436,
+      "Pending": 0.404,
+      "Planned": 0.0,
+      "Rescheduled": 0.481
+    },
+    "overall_blank_counts": {
+      "lead_id": 515,
+      "contact_id": 204,
+      "company_id": 96,
+      "opportunity_id": 1860,
+      "customer_id": 2222,
+      "outcome": 1033,
+      "next_follow_up_date": 1517
+    }
+  },
+  "10_impossible_date_sequences": {
+    "leads.created_after_first_contacted": 0,
+    "leads.contacted_after_qualified": 0,
+    "leads.qualified_after_converted": 0,
+    "leads.created_after_converted": 0,
+    "opportunities.created_after_close": 0,
+    "opportunities.created_after_expected_close": 0,
+    "customers.since_before_source_opp_close": 0,
+    "support_cases.resolved_before_opened": 0
+  },
+  "11_12_stage_and_status_transitions": {
+    "lead_status_history_invalid_transitions": 0,
+    "opportunity_stage_history_invalid_transitions": 0
+  },
+  "13_invalid_customer_derivations": {
+    "customers_not_from_closed_won": 0,
+    "customers_company_mismatch_with_source_opp": 0
+  },
+  "14_transaction_chronology": {
+    "transactions_before_customer_since": 0
+  },
+  "15_revenue_inconsistencies": {
+    "opportunity_products_line_total_mismatch": 0,
+    "opportunities_deal_value_vs_product_sum_mismatch": 0,
+    "customer_transactions_refund_type_not_negative_amount": 0,
+    "customer_transactions_negative_amount_not_refund_type": 0
+  },
+  "16_opportunity_probability_inconsistencies": {
+    "out_of_band_or_wrong": 0
+  },
+  "17_unrealistic_distributions": {
+    "opportunities.win_rate": 0.464,
+    "leads.conversion_rate": 0.183,
+    "companies.size_distribution": {
+      "Small": 0.311,
+      "Mid": 0.243,
+      "Micro": 0.196,
+      "Large": 0.126,
+      "Enterprise": 0.124
+    },
+    "customers.status_distribution": {
+      "Active": 0.562,
+      "Paused": 0.25,
+      "At Risk": 0.188
+    },
+    "customers.tier_distribution": {
+      "Bronze": 0.75,
+      "Silver": 0.25
+    }
+  },
+  "18_excessive_repeated_values": {
+    "companies.company_name_max_repeat_count": 1,
+    "companies.company_name_max_repeat_pct": 0.001,
+    "contacts.full_name_max_repeat_count": 3,
+    "contacts.full_name_max_repeat_pct": 0.003,
+    "opportunities.deal_value_inr_max_repeat_count": 16,
+    "opportunities.deal_value_inr_max_repeat_pct": 0.081,
+    "customer_transactions.amount_inr_max_repeat_count": 6,
+    "customer_transactions.amount_inr_max_repeat_pct": 0.052
+  },
+  "19_placeholder_records": {
+    "companies": 0,
+    "contacts": 0,
+    "leads": 0,
+    "opportunities": 0,
+    "customers": 0,
+    "activities": 0
+  },
+  "20_suspicious_synthetic_patterns": {
+    "opportunities.identical_created_and_close_ts": 0
+  },
+  "21_ml_target_leakage": {
+    "lead_conversion.cutoff_after_converted_at": 0,
+    "lead_scoring.cutoff_not_equal_created_at": 909,
+    "lead_scoring.forbidden_columns_present": [
+      "num_status_transitions_before_cutoff",
+      "rep_trailing_conversion_rate"
+    ],
+    "churn.customer_status_column_present": false,
+    "segmentation.cluster_id_column_present": false
+  },
+  "22_class_imbalance": {
+    "lead_conversion_positive_rate": 0.183,
+    "lead_scoring_positive_rate": 0.183,
+    "churn_positive_rate": 0.254
+  },
+  "23_data_duplication_source_vs_ml": {
+    "lead_scoring_raw_column_overlap_with_leads_besides_ids": [
+      "company_id",
+      "company_size_at_lead_time"
+    ]
+  },
+  "27_ml_dataset_validation": {
+    "duplicate_source_entity_ids_where_uniqueness_expected": {
+      "lead_conversion_dataset.lead_id": 0,
+      "lead_scoring_dataset.lead_id": 0
+    },
+    "duplicate_entity_time_bucket_informational_multi_snapshot_by_design": {
+      "note": "churn/segmentation/sales_forecasting are intentionally one row PER ENTITY PER TIME BUCKET (multiple snapshots per customer/department over time) -- a repeated customer_id/department_id alone is expected and NOT a defect; only a repeated (entity, time-bucket) pair would be",
+      "churn_prediction_dataset.customer_id_repeat_rows": 47,
+      "churn_prediction_dataset.(customer_id+observation_snapshot_date)_duplicated": 0,
+      "customer_segmentation_dataset.customer_id_repeat_rows": 239,
+      "customer_segmentation_dataset.(customer_id+snapshot_date)_duplicated": 0,
+      "sales_forecasting_dataset.department_id_repeat_rows": 43,
+      "sales_forecasting_dataset.(department_id+period_start)_duplicated": 0
+    },
+    "invalid_target_values": {
+      "lead_conversion_dataset.label_converted_not_bool": 0,
+      "lead_scoring_dataset.label_converted_not_bool": 0,
+      "churn_prediction_dataset.label_churned_not_bool": 0,
+      "sales_forecasting_dataset.label_actual_amount_negative_or_unparseable": 0
+    },
+    "invalid_numeric_values": {
+      "customer_segmentation_dataset.monetary_total_last_12mo_inr_negative": 0,
+      "customer_segmentation_dataset.frequency_transactions_last_12mo_negative": 0,
+      "churn_prediction_dataset.transaction_amount_trailing_90d_inr_negative": 0,
+      "sales_forecasting_dataset.historical_win_rate_out_of_0_1_range": 0,
+      "sales_forecasting_dataset.pipeline_value_negative": 0
+    },
+    "invalid_dates": {
+      "lead_conversion_dataset.observation_cutoff_at_unparseable": 0,
+      "lead_scoring_dataset.observation_cutoff_at_unparseable": 0,
+      "churn_prediction_dataset.observation_snapshot_date_unparseable": 0,
+      "churn_prediction_dataset.renewal_due_date_unparseable": 0,
+      "customer_segmentation_dataset.snapshot_date_unparseable": 0,
+      "sales_forecasting_dataset.period_start_unparseable": 0
+    },
+    "class_imbalance": {
+      "lead_conversion_positive_rate": 0.183,
+      "lead_scoring_positive_rate": 0.183,
+      "churn_positive_rate": 0.254
+    },
+    "target_leakage": {
+      "lead_conversion.cutoff_after_converted_at": 0,
+      "lead_scoring.cutoff_not_equal_created_at": 909,
+      "lead_scoring.forbidden_columns_present": [
+        "num_status_transitions_before_cutoff",
+        "rep_trailing_conversion_rate"
+      ],
+      "churn.customer_status_column_present": false,
+      "segmentation.cluster_id_column_present": false
+    }
+  },
+  "27b_ml_missing_value_investigation": {
+    "churn_prediction_dataset.avg_case_priority_trailing_90d": {
+      "null_count": 33,
+      "classification": "logically_valid",
+      "reason": "null exactly when support_case_count_trailing_90d == 0 -- there is nothing to average",
+      "invariant_violations": 0
+    },
+    "customer_segmentation_dataset.avg_satisfaction_score": {
+      "null_count": 112,
+      "classification": "logically_valid",
+      "reason": "null whenever support_case_count_last_12mo == 0 (no cases to average); also null when cases exist but none were resolved/scored in that window -- both are real absences, not missing data. Fixed in this revision: the average previously drew from ALL-time resolved cases instead of the same trailing-12mo window as the case count, which could leave a non-null score on a 0-count row -- see data_quality_report.md.",
+      "invariant_violations": 0
+    },
+    "sales_forecasting_dataset.historical_win_rate_trailing_3mo": {
+      "null_count": 6,
+      "classification": "logically_valid",
+      "reason": "null when 0 opportunities closed in the trailing 3 months (0/0 is undefined); a quarter where every closed deal was Lost has a well-defined win rate of exactly 0.0 (not null) -- confirmed: every non-null 0-revenue row has win_rate == 0.0 exactly",
+      "invariant_violations": 0
+    },
+    "sales_forecasting_dataset.avg_deal_cycle_days_trailing_6mo": {
+      "null_count": 7,
+      "classification": "logically_valid",
+      "reason": "null when 0 opportunities closed in the trailing 6 months (no cycle-time samples to average); this window (6mo) differs from historical_win_rate's (3mo), so the two columns' null patterns legitimately don't align row-for-row",
+      "invariant_violations": 0
+    }
+  },
+  "24_inconsistent_ids": {
+    "industries.industry_id_distinct_prefixes_used": [
+      "IND-"
+    ],
+    "industries.industry_id_internally_inconsistent": false,
+    "industries.industry_id_distinct_id_widths": [
+      6
+    ],
+    "territories.territory_id_distinct_prefixes_used": [
+      "TERR-"
+    ],
+    "territories.territory_id_internally_inconsistent": false,
+    "territories.territory_id_distinct_id_widths": [
+      8
+    ],
+    "departments.department_id_distinct_prefixes_used": [
+      "DEPT-"
+    ],
+    "departments.department_id_internally_inconsistent": false,
+    "departments.department_id_distinct_id_widths": [
+      9
+    ],
+    "lead_sources.lead_source_id_distinct_prefixes_used": [
+      "SRC-"
+    ],
+    "lead_sources.lead_source_id_internally_inconsistent": false,
+    "lead_sources.lead_source_id_distinct_id_widths": [
+      6
+    ],
+    "products.product_id_distinct_prefixes_used": [
+      "PROD-"
+    ],
+    "products.product_id_internally_inconsistent": false,
+    "products.product_id_distinct_id_widths": [
+      8
+    ],
+    "sales_reps.rep_id_distinct_prefixes_used": [
+      "REP-"
+    ],
+    "sales_reps.rep_id_internally_inconsistent": false,
+    "sales_reps.rep_id_distinct_id_widths": [
+      8
+    ],
+    "campaigns.campaign_id_distinct_prefixes_used": [
+      "CAMP-"
+    ],
+    "campaigns.campaign_id_internally_inconsistent": false,
+    "campaigns.campaign_id_distinct_id_widths": [
+      8
+    ],
+    "companies.company_id_distinct_prefixes_used": [
+      "COMP-"
+    ],
+    "companies.company_id_internally_inconsistent": false,
+    "companies.company_id_distinct_id_widths": [
+      11
+    ],
+    "contacts.contact_id_distinct_prefixes_used": [
+      "CONT-"
+    ],
+    "contacts.contact_id_internally_inconsistent": false,
+    "contacts.contact_id_distinct_id_widths": [
+      11
+    ],
+    "leads.lead_id_distinct_prefixes_used": [
+      "LEAD-"
+    ],
+    "leads.lead_id_internally_inconsistent": false,
+    "leads.lead_id_distinct_id_widths": [
+      11
+    ],
+    "lead_status_history.history_id_distinct_prefixes_used": [
+      "LSH-"
+    ],
+    "lead_status_history.history_id_internally_inconsistent": false,
+    "lead_status_history.history_id_distinct_id_widths": [
+      11
+    ],
+    "campaign_responses.response_id_distinct_prefixes_used": [
+      "CRSP-"
+    ],
+    "campaign_responses.response_id_internally_inconsistent": false,
+    "campaign_responses.response_id_distinct_id_widths": [
+      12
+    ],
+    "opportunities.opportunity_id_distinct_prefixes_used": [
+      "OPP-"
+    ],
+    "opportunities.opportunity_id_internally_inconsistent": false,
+    "opportunities.opportunity_id_distinct_id_widths": [
+      10
+    ],
+    "opportunity_products.opportunity_product_id_distinct_prefixes_used": [
+      "OPPR-"
+    ],
+    "opportunity_products.opportunity_product_id_internally_inconsistent": false,
+    "opportunity_products.opportunity_product_id_distinct_id_widths": [
+      12
+    ],
+    "opportunity_stage_history.history_id_distinct_prefixes_used": [
+      "OSH-"
+    ],
+    "opportunity_stage_history.history_id_internally_inconsistent": false,
+    "opportunity_stage_history.history_id_distinct_id_widths": [
+      11
+    ],
+    "customers.customer_id_distinct_prefixes_used": [
+      "CUST-"
+    ],
+    "customers.customer_id_internally_inconsistent": false,
+    "customers.customer_id_distinct_id_widths": [
+      11
+    ],
+    "customer_transactions.transaction_id_distinct_prefixes_used": [
+      "TXN-"
+    ],
+    "customer_transactions.transaction_id_internally_inconsistent": false,
+    "customer_transactions.transaction_id_distinct_id_widths": [
+      11
+    ],
+    "customer_support_cases.case_id_distinct_prefixes_used": [
+      "CASE-"
+    ],
+    "customer_support_cases.case_id_internally_inconsistent": false,
+    "customer_support_cases.case_id_distinct_id_widths": [
+      12
+    ],
+    "activities.activity_id_distinct_prefixes_used": [
+      "ACT-"
+    ],
+    "activities.activity_id_internally_inconsistent": false,
+    "activities.activity_id_distinct_id_widths": [
+      11
+    ]
+  },
+  "25_inconsistent_naming_formatting": {
+    "contacts.invalid_email_format": 0,
+    "sales_reps.invalid_email_format": 0,
+    "contacts.invalid_phone_format": 0,
+    "sales_reps.invalid_phone_format": 0,
+    "companies.invalid_pincode": 1086,
+    "companies.invalid_gstin": 0,
+    "companies.name_leading_trailing_whitespace": 0,
+    "contacts.name_leading_trailing_whitespace": 0,
+    "companies.double_spaces_in_name": 0,
+    "contacts.double_spaces_in_name": 0
+  }
+}

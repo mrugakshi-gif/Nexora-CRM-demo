@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+python-jose[cryptography]
+passlib[bcrypt]
+pytest
+firebase-admin
+pandas
+python-multipart
+langchain
+langchain-core
+langchain-google-genai
+chromadb
+PyPDF2
+scikit-learn
+python-docx
