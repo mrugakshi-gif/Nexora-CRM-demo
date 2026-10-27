@@ -15,3 +15,5 @@ chromadb
 PyPDF2
 scikit-learn
 python-docx
+apscheduler
+
