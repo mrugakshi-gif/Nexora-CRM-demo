@@ -62,29 +62,37 @@ APPROVED_ALLOWLIST = [
 
 def seed_demo_rag(verbose: bool = True) -> Dict[str, Any]:
     embeddings = get_embeddings()
+    vectorstore = None
     if not embeddings:
-        print("[seed_rag] ERROR: GOOGLE_API_KEY not configured or Embeddings failed to initialize.")
-        return {"status": "FAILED", "reason": "GOOGLE_API_KEY missing or invalid"}
+        print("[seed_rag] WARNING: GOOGLE_API_KEY not configured or Embeddings failed. Documents and chunks will be seeded into SQLite, but vector indexing will be skipped.")
+    else:
+        try:
+            os.makedirs(DEMO_CHROMA_DIR, exist_ok=True)
+            vectorstore = Chroma(persist_directory=DEMO_CHROMA_DIR, embedding_function=embeddings)
+        except Exception as ce:
+            print(f"[seed_rag] WARNING: Could not initialize Chroma store: {ce}")
+            vectorstore = None
 
     if not os.path.exists(DEMO_DOCS_DIR):
         print(f"[seed_rag] ERROR: Directory not found: {DEMO_DOCS_DIR}")
         return {"status": "FAILED", "reason": "DEMO_DOCS_DIR missing"}
 
     db = SessionLocal()
-    os.makedirs(DEMO_CHROMA_DIR, exist_ok=True)
-    vectorstore = Chroma(persist_directory=DEMO_CHROMA_DIR, embedding_function=embeddings)
+
 
     # Check already indexed documents in Chroma
     existing_sources = set()
-    try:
-        col = vectorstore._collection
-        data = col.get(include=["metadatas"])
-        if data and data.get("metadatas"):
-            for m in data["metadatas"]:
-                if m and "source" in m:
-                    existing_sources.add(m["source"])
-    except Exception as e:
-        print(f"[seed_rag] Notice: inspecting existing collection: {e}")
+    if vectorstore is not None:
+        try:
+            col = vectorstore._collection
+            data = col.get(include=["metadatas"])
+            if data and data.get("metadatas"):
+                for m in data["metadatas"]:
+                    if m and "source" in m:
+                        existing_sources.add(m["source"])
+        except Exception as e:
+            print(f"[seed_rag] Notice: inspecting existing collection: {e}")
+
 
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,
@@ -104,13 +112,17 @@ def seed_demo_rag(verbose: bool = True) -> Dict[str, Any]:
                     print(f"[seed_rag] Skipping missing allowlist file: {filename}")
                 continue
 
-            # Idempotency check: if document already exists in DB and Chroma, skip
+            # Idempotency check: if document already exists in DB and Chroma (or DB already populated when vectorstore unavailable), skip
             existing_doc = db.query(models.CompanyDocument).filter(models.CompanyDocument.filename == filename).first()
-            if existing_doc and filename in existing_sources and existing_doc.index_status == "Indexed":
+            if existing_doc and (
+                (filename in existing_sources and existing_doc.index_status == "Indexed")
+                or (vectorstore is None and existing_doc.processing_status == "Completed")
+            ):
                 if verbose:
-                    print(f"[seed_rag] Document '{filename}' already indexed. Skipping.")
+                    print(f"[seed_rag] Document '{filename}' already processed. Skipping.")
                 skipped_docs += 1
                 continue
+
 
             if verbose:
                 print(f"[seed_rag] Processing '{filename}'...")
@@ -225,17 +237,24 @@ def seed_demo_rag(verbose: bool = True) -> Dict[str, Any]:
 
             db.commit()
 
-            # Add to Chroma
-            vectorstore.add_documents(docs_to_index)
+            # Add to Chroma (if vector embedding fails, document and chunk metadata remain in SQLite)
+            if vectorstore is not None:
+                try:
+                    vectorstore.add_documents(docs_to_index)
+                    company_doc.index_status = "Indexed"
+                except Exception as ve:
+                    print(f"[seed_rag] WARNING: Could not index chunks into Chroma for '{filename}': {ve}")
+                    company_doc.index_status = "Failed"
+            else:
+                company_doc.index_status = "Pending"
 
             company_doc.processing_status = "Completed"
-            company_doc.index_status = "Indexed"
             db.commit()
 
             total_docs += 1
             total_chunks += len(docs_to_index)
 
-        print(f"[seed_rag] SUCCESS: Indexed {total_docs} new documents ({total_chunks} chunks). Skipped {skipped_docs} already indexed.")
+        print(f"[seed_rag] SUCCESS: Processed {total_docs} new documents ({total_chunks} chunks). Skipped {skipped_docs} already indexed.")
         return {
             "status": "OK",
             "indexed_docs": total_docs,
@@ -249,5 +268,16 @@ def seed_demo_rag(verbose: bool = True) -> Dict[str, Any]:
     finally:
         db.close()
 
+
+def run_seed_rag_safely(verbose: bool = True) -> Dict[str, Any]:
+    """Safe wrapper for application startup that never raises an unhandled exception."""
+    try:
+        return seed_demo_rag(verbose=verbose)
+    except Exception as exc:
+        print(f"[seed_rag] Non-fatal exception during RAG seeding: {exc}")
+        return {"status": "DEGRADED", "error": str(exc)}
+
+
 if __name__ == "__main__":
-    seed_demo_rag(verbose=True)
+    run_seed_rag_safely(verbose=True)
+

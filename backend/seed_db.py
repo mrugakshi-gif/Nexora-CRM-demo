@@ -328,3 +328,14 @@ if __name__ == "__main__":
     if os.getcwd() != BASE_DIR:
         os.chdir(BASE_DIR)
     seed_database()
+
+    # Seed approved synthetic demo RAG documents and chunks (non-blocking, safe)
+    try:
+        from backend.seed_rag import run_seed_rag_safely
+        print("\n" + "=" * 60)
+        print("Phase D4 — Seeding Synthetic Demo Documents for RAG")
+        print("=" * 60)
+        run_seed_rag_safely(verbose=True)
+    except Exception as _rag_exc:
+        print(f"  [warn] Demo RAG seeding skipped: {_rag_exc}")
+
