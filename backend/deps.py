@@ -12,11 +12,14 @@ Authentication mode is controlled by CRM_AUTH_MODE env var:
 NEVER hardcode CRM_DEMO_PASSWORD in source code.
 """
 import os
+import logging
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
 from . import models
 from .database import get_db
+
+logger = logging.getLogger(__name__)
 
 # We leave tokenUrl for swagger UI even if we don't handle local login
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="dummy")
@@ -80,8 +83,7 @@ def get_current_user(
     ).first()
     
     if not user_by_email:
-        with open("scratch/missing_email.txt", "w") as f:
-            f.write(email)
+        logger.warning("CRM account not found for email: %s", email)
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail=f"CRM account not found for this email: {email}"

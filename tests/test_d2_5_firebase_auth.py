@@ -167,3 +167,15 @@ class TestFirebaseAuth:
         with patch('firebase_admin.auth.verify_id_token', return_value=mock_decoded):
             response = client.get("/api/companies", headers={"Authorization": "Bearer valid"})
             assert response.status_code == 200
+
+    # 17. Unknown CRM email returns 403 (never 500) and does NOT touch scratch/
+    def test_unknown_crm_email_no_scratch_write(self, tmp_path, monkeypatch):
+        # Even if cwd has no scratch directory, this must return 403 cleanly without raising FileNotFoundError
+        monkeypatch.chdir(tmp_path)
+        mock_decoded = {"uid": "unknown_uid", "email": "nonexistent.evaluator@example.com", "email_verified": True}
+        with patch('firebase_admin.auth.verify_id_token', return_value=mock_decoded):
+            response = client.get("/api/auth/me", headers={"Authorization": "Bearer valid"})
+            assert response.status_code == 403
+            assert response.json()["detail"] == "CRM account not found for this email: nonexistent.evaluator@example.com"
+            assert not (tmp_path / "scratch").exists()
+
